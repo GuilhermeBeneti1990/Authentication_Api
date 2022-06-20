@@ -1,0 +1,27 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /api/v1
+
+spring:
+  application:
+    name: authentication-api
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  jmx:
+    enabled: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/authentication?allowPublicKeyRetrieval=true&sslMode=DISABLED&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+
+security:
+  jwt:
+    token:
+      secret-key: jacksparrow
+      expire-length: 36000
